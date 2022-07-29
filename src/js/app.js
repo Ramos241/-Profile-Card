@@ -14,7 +14,6 @@ import "../style/index.css";
         github: null,
         linkedin: null,
         instagram: null,
-
         name: null,
         lastname: null,
         role: null,
@@ -33,14 +32,25 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>
+            ${(variables.name,
+            variables.lastname == null ? "Name" : variables.name)}  
+            ${variables.lastname == null ? "Last Name" : variables.lastname}  
+          </h1>
+          <h2>
+            ${variables.role == null ? "Role" : variables.role} 
+          </h2>
+          <h3>
+            ${variables.city == null ? "City" : variables.city},
+            ${variables.country == null ? "Country" : variables.country}
+          </h3>
           <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href=${
+              variables.twitter
+            }><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Ramos241"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/gabrielramosguzman/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/gabrielramos_7/"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
