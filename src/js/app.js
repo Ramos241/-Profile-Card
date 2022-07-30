@@ -33,8 +33,7 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>
-            ${(variables.name,
-            variables.lastname == null ? "Name" : variables.name)}  
+            ${variables.lastname == null ? "Name" : variables.name}
             ${variables.lastname == null ? "Last Name" : variables.lastname}  
           </h1>
           <h2>
@@ -71,7 +70,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
